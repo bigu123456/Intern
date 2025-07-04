@@ -25,15 +25,22 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex relative">
+    <>
       {/* Sidebar */}
       <div
         className={`
           bg-white shadow-lg border-r border-gray-200
           transition-all duration-300 ease-in-out overflow-hidden
-          ${sidebarOpen ? 'w-64' : 'w-16'}
           flex-shrink-0 flex flex-col
         `}
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          height: '100vh',
+          width: sidebarOpen ? '16rem' : '4rem', // 256px or 64px
+          zIndex: 1000,
+        }}
       >
         {/* Top: Scrollable menu */}
         <div className="flex-1 py-6 overflow-auto">
@@ -153,26 +160,26 @@ const Sidebar = () => {
             </div>
           </div>
         )}
-
-        {/* Toggle Button */}
-        <button
-          onClick={() => setSidebarOpen(!sidebarOpen)}
-          aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
-          className="fixed top-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-full p-1 shadow-md hover:bg-gray-100 transition-all duration-300 z-50"
-          style={{
-            width: 32,
-            height: 32,
-            left: sidebarOpen ? '16rem' : '4rem',
-          }}
-        >
-          {sidebarOpen ? (
-            <ChevronLeft className="w-5 h-5 text-gray-600" />
-          ) : (
-            <ChevronRight className="w-5 h-5 text-gray-600" />
-          )}
-        </button>
       </div>
-    </div>
+
+      {/* Toggle Button */}
+      <button
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+        aria-label={sidebarOpen ? 'Close sidebar' : 'Open sidebar'}
+        className="fixed top-1/2 -translate-y-1/2 bg-white border border-gray-300 rounded-full p-1 shadow-md hover:bg-gray-100 transition-all duration-300 z-50"
+        style={{
+          width: 32,
+          height: 32,
+          left: sidebarOpen ? '16rem' : '4rem',
+        }}
+      >
+        {sidebarOpen ? (
+          <ChevronLeft className="w-5 h-5 text-gray-600" />
+        ) : (
+          <ChevronRight className="w-5 h-5 text-gray-600" />
+        )}
+      </button>
+    </>
   );
 };
 

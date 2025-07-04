@@ -1,108 +1,84 @@
-import React from 'react'
-import { Button, Form,InputNumber,Input } from 'antd'
-import { useState } from 'react'
+import React from 'react';
+import { Form, Input, Button } from 'antd';
+import { UserOutlined, LockOutlined, HomeOutlined, NumberOutlined} from '@ant-design/icons';
 
 
 const Data = () => {
-  const [username, setusername] = useState("")
-  const [password, setpassword] = useState("")
-   const [city, setcity] = useState("")
-    const [age, setage] = useState("")
-  
+  const onFinish = (values) => {
+    console.log('submitted', values);
+  };
 
-
- 
-  const onFinish=(values)=>{
-    console.log("sucess",values)
-    setusername(values.username);
-    setpassword(values.password)
-    setcity(values.city);
-    setage(values.age);
-
-    
-
-  }
   return (
-   <>
- <div className='flex '>    
- <div className='flex justify-center items-center h-screen w-full bg-yellow-800 '>
+    <div className="min-h-screen p-2  px-10">
+      <div className="grid grid-cols-3 gap-4">
+        {[...Array(15)].map((_, index) => (
+         
+          <div
+            key={index}
+            className="bg-yellow-300 rounded-lg p-5 flex justify-center items-center"
+            style={{ minHeight: '150px' }}
+          >
+            {/* Inner white box with form */}
+            <div className="bg-yellow-500 rounded-lg border border-gray-300 shadow-md p-6 w-full max-w-xs">
+              <Form
+                onFinish={onFinish}
+                layout="vertical"
+              >
+                 <Form.Item  
+    label="username"
+    name="username"
+    rules={[{required:true, message:"entr valid username"}]}
+    >
+      <Input
+      placeholder='enter your username'
+      prefix={< UserOutlined/>}
+      />
 
+    </Form.Item>
+    <Form.Item  
+    label="password"
+    name="password"
+    rules={[{required:true, message:"entr valid password"}]}
+    >
+      <Input.Password
+      placeholder='enter your password'
+      prefix={< LockOutlined/>}
+      />
 
-      <Form  onFinish={onFinish} className='rounded-lg shadow-sm bg-white p-10'> 
-        <h1> welcome to intern</h1>
-      <Form.Item  
-      label="username"
-      name="username"
-      rules={[{required:true,message:"plz enetr valid username"}]}
-      >
-        <Input
-        placeholder='enetr your username'
-        />
+    </Form.Item>
+    <Form.Item  
+    label="age"
+    name="age"
+    rules={[{required:true, message:"entr valid age"}]}
+    >
+      <Input
+      placeholder='enter your age'
+      prefix={< NumberOutlined/>}
+      className='w-full'
+      />
 
+    </Form.Item>
+    <Form.Item  
+    label="city"
+    name="city"
+    rules={[{required:true, message:"entr valid city"}]}
+    >
+      <Input
+      placeholder='enter your city'
+      prefix={<  HomeOutlined/>}
+      />
 
-      </Form.Item>
-      <Form.Item  
-      label="password"
-      name="password"
-      rules={[{required:true,message:"plz enetr valid username"}]}
-      >
-        <Input
-        placeholder='enetr your username'
-        />
-
-
-      </Form.Item>
-      <Form.Item  
-      label="age"
-      name="age"
-      rules={[{required:true,message:"plz enetr valid username"}]}
-      >
-        <InputNumber
-        placeholder='enetr your username'
-        className='w-full'
-        />
-
-
-      </Form.Item>
-      <Form.Item  
-      label="city"
-      name="city"
-      rules={[{required:true,message:"plz enetr valid username"}]}
-      >
-        <Input
-        placeholder='enetr your username'
-        />
-
-
-      </Form.Item>
-      <Button type='primary' htmlType='submit' className='w-full'> submit</Button>
-
-
-    </Form>
+    </Form.Item>
+                <Button type="primary" htmlType="submit" className="w-full">
+                  Submit
+                </Button>
+              </Form>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-    <div className='flex  flex-col justify-center items-center  bg-yellow-400 h-screen w-full'>
-      <div className=' bg-white p-10'>
-      <h1>username:{username}</h1>
-      <h1>password:{password}</h1>
-      <h1>city:{city}</h1>
-      <h1>age{age}</h1>
-    </div>
+  );
+};
 
-    </div>
-     <div className='flex  flex-col justify-center items-center  bg-yellow-400 h-screen w-1/2'>
-      <div className=' bg-white p-10'>
-      <h1>username:{username}</h1>
-      <h1>password:{password}</h1>
-      <h1>city:{city}</h1>
-      <h1>age{age}</h1>
-    </div>
-
-    </div>
-    
-    
-   </div>
-   </>
-  )
-}
-
-export default Data
+export default Data;

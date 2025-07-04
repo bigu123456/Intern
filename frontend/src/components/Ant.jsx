@@ -2,7 +2,7 @@ import React from 'react'
 import{Button,Input,Form,InputNumber} from "antd";
 import { UserOutlined, LockOutlined, HomeOutlined, NumberOutlined} from '@ant-design/icons';
 import { useState } from 'react';
-import { DatabaseBackupIcon } from 'lucide-react';
+
 
 
 const Ant = () => {
@@ -91,7 +91,7 @@ const Ant = () => {
     
   </div>
 
-       <div className=' flex  flex-col w-1/2 h-screen justify-center items-center bg-yellow-500'>
+       <div className=' flex  flex-col w-1/2 h-screen justify-center items-center bg-yellow-600'>
   <div className=' bg-white rounded-lg shadow-sm p-10 '>
     <h1> here is your details:</h1>
 <h1> username:{move.username}</h1>

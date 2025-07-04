@@ -1,65 +1,138 @@
 import React, { useState } from 'react';
-import { Form, Input, Button } from "antd";
-import toast from 'react-hot-toast';
+import { Button, Input, Form, Table, Select, DatePicker } from "antd";
+import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import dayjs from 'dayjs';
 
-const Crud = () => {
+const { Option } = Select;
+
+const Curd = () => {
   const [items, setItems] = useState([]);
+  const [editingId, setEditingId] = useState(null);
   const [form] = Form.useForm();
 
   const onFinish = (values) => {
-    if (!values.input.trim()) {
-      toast.error("Input cannot be empty");
-      return;
+    const formattedDate = values.date ? values.date.format('YYYY-MM-DD') : '';
+
+    if (editingId !== null) {
+     
+      setItems(prev =>
+        prev.map(item =>
+          item.id === editingId
+            ? { ...item, text: values.input, category: values.category, date: formattedDate }
+            : item
+         
+        )
+      );
+      setEditingId(null);
+    } else {
+    
+      setItems([
+        ...items,
+        {
+          id: Date.now(),
+          text: values.input,
+          category: values.category,
+          date: formattedDate
+        }
+      ]);
     }
-    setItems([...items, { id: Date.now(), text: values.input }]);
+
     form.resetFields();
-    toast.success("Item added!");
   };
 
   const handleDelete = (id) => {
-    setItems(items.filter(item => item.id !== id));
-    toast.success("Item deleted");
+    setItems(prevItems => prevItems.filter(item => item.id !== id));
+
+    alert("delete?")
   };
 
-  const handleEdit = (id) => {
-    const toEdit = items.find(item => item.id === id);
-    if (toEdit) {
-      form.setFieldsValue({ input: toEdit.text });
-      setItems(items.filter(item => item.id !== id));
-      toast("Edit mode active ");
-    }
+  const handleEdit = (record) => {
+    form.setFieldsValue({
+      input: record.text,
+      category: record.category,
+      date: dayjs(record.date),
+    });
+    setEditingId(record.id);
   };
+
+  const columns = [
+    {
+      title: "ID",
+      dataIndex: "id",
+      key: "id"
+    },
+    {
+      title: "Name",
+      dataIndex: "text",
+      key: "text"
+    },
+    {
+      title: "Category",
+      dataIndex: "category",
+      key: "category"
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date"
+    },
+    {
+      title: 'Actions',
+      key: 'actions',
+      render: (_, record) => (
+        <>
+          <EditOutlined onClick={() => handleEdit(record)} style={{ cursor: 'pointer', marginRight: 12 }} />
+          <DeleteOutlined onClick={() => handleDelete(record.id)} style={{ cursor: 'pointer' }} />
+        </>
+      )
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-slate-500 flex items-center justify-center">
-      <div className="bg-white p-6 rounded w-full max-w-md">
-        <h2 className="text-xl font-bold mb-4">CRUD with Toast</h2>
-        <Form form={form} onFinish={onFinish}>
-          <Form.Item
-            name="input"
-            rules={[{ required: true, message: "Please enter a value" }]}
-          >
-            <Input placeholder="Enter text" />
-          </Form.Item>
-          <Button htmlType="submit" className="w-full bg-blue-500 text-white">
-            Add
-          </Button>
-        </Form>
+    <>
+     <h1 className='flex justify-center items-center'> curd </h1>
+    <div className=''>
+     
 
-        <ul className="mt-4 space-y-3">
-          {items.map(item => (
-            <li key={item.id} className="bg-gray-100 p-2 rounded flex flex-col gap-2">
-              <span>{item.text}</span>
-              <div className="flex gap-2">
-                <Button type="link" onClick={() => handleEdit(item.id)}>Edit</Button>
-                <Button type="link" danger onClick={() => handleDelete(item.id)}>Delete</Button>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+   
+      <Form form={form} onFinish={onFinish} layout="inline" className='py-10 bg-white'
+      >
+        <Form.Item
+          name="input"
+          rules={[{ required: true, message: "Enter text" }]}
+        >
+          <Input placeholder='Enter anything' />
+        </Form.Item>
+
+        <Form.Item
+          name="category"
+          rules={[{ required: true, message: "Select a category" }]}
+        >
+          <Select placeholder="Select category" style={{ width: 150 }}>
+            <Option value="Fruit">Fruit</Option>
+            <Option value="Vegetable">Vegetable</Option>
+            <Option value="Other">Other</Option>
+          </Select>
+        </Form.Item>
+
+        <Form.Item
+          name="date"
+          rules={[{ required: true, message: "Select a date" }]}
+        >
+          <DatePicker />
+        </Form.Item>
+
+        <Form.Item>
+          <Button type='primary' htmlType='submit'>
+            {editingId ? 'Update' : 'Add'}
+          </Button>
+        </Form.Item>
+      </Form>
+
+      <Table dataSource={items} columns={columns} rowKey="id" style={{ marginTop: 20 }} />
+       </div>
+    </>
   );
 };
 
-export default Crud;
+export default Curd;
