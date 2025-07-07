@@ -24,6 +24,8 @@ import Learning from "./elements/Learning";
 import Antd from "./elements/Antd";
 import Fetch from "./elements/Fetch";
 import Querry from "./elements/Querry";
+import Usertable from "./elements/Usertable";
+import Fake from "./elements/Fake";
 
 
 const queryClient = new QueryClient();
@@ -55,6 +57,8 @@ const App = () => {
           <Route path="/Antd" element={<Antd />} />
           <Route path="/Fetch" element={<Fetch />} />
           <Route path="Querry" element={<Querry/>}/>
+          <Route path="Usertable" element={<Usertable/>}/>
+          <Route path="Fake" element={<Fake/>}/>
         </Routes>
 
         {/* Toasts (for notifications) */}

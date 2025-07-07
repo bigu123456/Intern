@@ -1,4 +1,4 @@
-import { Search as SearchIcon } from 'lucide-react'; // Rename to avoid confusion
+import { Search as SearchIcon } from 'lucide-react'; 
 import React, { useState } from 'react';
 
 const Filter = () => {
@@ -6,7 +6,7 @@ const Filter = () => {
 
   const array = [
     { id: 1, name: "Bigyan" },
-    { id: 2, name: "Bishal" }, // Fixed typo here
+    { id: 2, name: "Bishal" }, 
     { id: 3, name: 'Ujwal' }
   ];
 
