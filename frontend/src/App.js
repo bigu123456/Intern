@@ -26,6 +26,8 @@ import Fetch from "./elements/Fetch";
 import Querry from "./elements/Querry";
 import Usertable from "./elements/Usertable";
 import Fake from "./elements/Fake";
+import Child from "./elements/Child";
+import Parent from "./elements/Parent";
 
 
 const queryClient = new QueryClient();
@@ -59,6 +61,10 @@ const App = () => {
           <Route path="Querry" element={<Querry/>}/>
           <Route path="Usertable" element={<Usertable/>}/>
           <Route path="Fake" element={<Fake/>}/>
+     <Route path="/Child" element={<Child name={["Bigyan", "Biswash", "Ujwal"]} />} />
+
+
+          <Route path="Parent"element={<Parent/>}/>
         </Routes>
 
         {/* Toasts (for notifications) */}

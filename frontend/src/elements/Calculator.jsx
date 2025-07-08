@@ -1,57 +1,58 @@
 import React from 'react'
-import { useState } from 'react'
-
 
 const Calculator = () => {
-    const [Number1, setnumber1] = useState("");
-    const [number2, setnumber2] = useState("");
-    const [total, settotal] = useState("");
-    const add=()=>{
-        let num=Number(Number1)+Number(number2)
-        settotal("the sum of two numbers is " +num)
 
-        
-    }
-    const sub=()=>{
-        let num=Number(Number1)-Number(number2)
-        settotal("The total sub of two numbers is "  +num)
+    const products = [
+  { id: 1, name: 'Laptop', price: 1200, category: 'Electronics', stock: 30 },
+  { id: 2, name: 'Phone', price: 800, category: 'Electronics', stock: 100 },
+  { id: 3, name: 'Shirt', price: 50, category: 'Apparel', stock: 200 },
+  { id: 4, name: 'Shoes', price: 120, category: 'Apparel', stock: 150 },
+  { id: 5, name: 'Watch', price: 200, category: 'Accessories', stock: 75 },
+];
+//Write a method to get all product names as an array.
+const names=products.map(pro=>pro.name)
+console.log(names)
+// Write a method to find a product by its id.
+const hero= products.find(i=>i.id===3)
+console.log(hero)
+//Write a method to filter all products belonging to the category "Electronics".
+const elo=products.filter(eloo=>eloo.category==="Electronics")
+console.log(elo)
+//Write a method to calculate the total stock of all products combined.
+const total=products.reduce((Sum, items)=>Sum+items.stock,0)
+console.log(total);
+//Write a method to check if there is any product with stock less than 50.
+const fifty=products.filter(fil=>fil.stock<50)
+console.log(fifty)
+//Write a method to increase the price of all "Apparel" products by 10%.
 
-        
-    }
-    const multiple=()=>{
-        let num=Number(Number1) *Number(number2)
-        settotal("The total multiplication of two numbers is " +num)
+products.forEach(all=>{
+if(all.category==="Apparel"){
+    all.price=all.price * 1.10;
+}
+})
+console.log(products)
+//Write a method that returns a new array of products sorted by price in ascending order.
+const low=[...products].sort((a,b)=>b.price-a.price)
+console.log(low);
+//Write a method to find the average price of all products.
+const avg=products.reduce((sum,items)=>sum+items.price,0)
+const averages=avg/products.length
+console.log(averages)
 
-        
-    }
-    const divide=()=>{
-        let num=Number(Number1)/Number(number2)
-        settotal("The total divided number of two numbers is "  +num)
 
-        
-    }
-    const handler=(e)=>{
-       e.preventDefault();
-       
 
-    }
+
+
+
+
+
   return (
-    <>
-    <h1>{total}</h1>
-    <div className='flex justify-center items-center h-screen bg-yellow-400  '>
-    
-    <form  onSubmit={handler} className=''>
-        <input value={Number1} onChange={(e)=>setnumber1(e.target.value)} placeholder='enetr number 1'></input><br></br>
-        <input value={number2} onChange={(e)=>setnumber2(e.target.value)} placeholder='enetr number 1'></input><br></br>
-        <button  typeof='submit' onClick={add} className='bg-blue-600 text-white border-red-800'> Add</button>
-         <button  typeof='submit'onClick={sub} className=' bg-blue-600 text-white border-red-800'> sub</button>
-          <button  typeof='submit' onClick={multiple} className=' bg-blue-600 text-white border-red-800'> multiple</button>
-           <button  typeof='submit 'onClick={divide} className='bg-blue-600 text-white rounded-sm border-spacing-5 border-red-800'> divide</button>
-    </form>
-    </div>
-    
-    </>
-   
+  <>
+  <h1> learning js</h1>
+  </>  
+      
+  
   )
 }
 
