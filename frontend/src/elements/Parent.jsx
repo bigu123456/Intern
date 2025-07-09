@@ -2,12 +2,7 @@ import React from 'react';
 import Child from './Child';
 
 const Parent = () => {
-  const array = [
-    { id: 1, name: "bigyan" },
-    { id: 2, name: "Bisawash" },
-    { id: 3, name: "Ujwal" },
-    { id: 4, name: "saroj" },
-  ];
+  const array =["Bigyan"]
 
   return (
     <>

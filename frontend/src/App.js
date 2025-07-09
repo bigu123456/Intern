@@ -1,7 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ToastContainer } from 'react-toastify';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from "react-toastify";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import "react-toastify/dist/ReactToastify.css";
+
+import { ApiProvider } from './elements/ApiContext';
+
+
 
 // Components
 import Test from "./elements/Test";
@@ -34,42 +38,44 @@ const queryClient = new QueryClient();
 
 const App = () => {
   return (
-   
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/Test" element={<Test />} />      
-          <Route path="/Loginpage" element={<LoginPage />} /> 
-          <Route path="/" element={<Dashbaord />} />
-          <Route path="/Bigyan" element={<Bigyan />} />
-          <Route path="/Header" element={<Header />} />
-          <Route path="/Calculator" element={<Calculator />} />
-          <Route path="/User" element={<User />} />
-          <Route path="/Sidebar" element={<Sidebar />} />
-          <Route path="/Role" element={<Role />} />
-          <Route path="/Filter" element={<Filter />} />
-          <Route path="/Curd" element={<Crud />} />
-          <Route path="/Ant" element={<Ant />} />
-          <Route path="/Data" element={<Data />} />
-          <Route path="/Admission" element={<Admission />} />
-          <Route path="/Bookinglist" element={<Bookinglist />} />
-          <Route path="/Claimmanagement" element={<ClaimManagement />} />
-          <Route path="/Learning" element={<Learning />} />
-          <Route path="/Antd" element={<Antd />} />
-          <Route path="/Fetch" element={<Fetch />} />
-          <Route path="Querry" element={<Querry/>}/>
-          <Route path="Usertable" element={<Usertable/>}/>
-          <Route path="Fake" element={<Fake/>}/>
-     <Route path="/Child" element={<Child name={["Bigyan", "Biswash", "Ujwal"]} />} />
+      <ApiProvider>
+        <Router>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/Test" element={<Test />} />
+            <Route path="/Loginpage" element={<LoginPage />} />
+            <Route path="/" element={<Dashbaord />} />
+            <Route path="/Bigyan" element={<Bigyan />} />
+            <Route path="/Header" element={<Header />} />
+            <Route path="/Calculator" element={<Calculator />} />
+            <Route path="/User" element={<User />} />
+            <Route path="/Sidebar" element={<Sidebar />} />
+            <Route path="/Role" element={<Role />} />
+            <Route path="/Filter" element={<Filter />} />
+            <Route path="/Curd" element={<Crud />} />
+            <Route path="/Ant" element={<Ant />} />
+            <Route path="/Data" element={<Data />} />
+            <Route path="/Admission" element={<Admission />} />
+            <Route path="/Bookinglist" element={<Bookinglist />} />
+            <Route path="/Claimmanagement" element={<ClaimManagement />} />
+            <Route path="/Learning" element={<Learning />} />
+            <Route path="/Antd" element={<Antd />} />
+            <Route path="/Fetch" element={<Fetch />} />
+            <Route path="/Querry" element={<Querry />} />
+            <Route path="/Usertable" element={<Usertable />} />
+            <Route path="/Fake" element={<Fake />} />
+            <Route
+              path="/Child"
+              element={<Child name={["Bigyan", "Biswash", "Ujwal"]} />}
+            />
+            <Route path="/Parent" element={<Parent />} />
+          </Routes>
 
-
-          <Route path="Parent"element={<Parent/>}/>
-        </Routes>
-
-        {/* Toasts (for notifications) */}
-        <ToastContainer />
-      </Router>
+          {/* Toasts (for notifications) */}
+          <ToastContainer />
+        </Router>
+      </ApiProvider>
     </QueryClientProvider>
   );
 };

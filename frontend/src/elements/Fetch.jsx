@@ -1,43 +1,23 @@
-import React, { useEffect, useState } from 'react';
-import { Table } from 'antd';
-import axios from 'axios';
+import React from "react";
+import { Table} from "antd";
+import { useApi } from "../elements/ApiContext";
 
 const Fetch = () => {
-  const [data, setData] = useState([]);     
-  const [loading, setLoading] = useState(false);
- 
+  const { data, isLoading, isError, error } = useApi();
 
-  useEffect(()=>{
-    setLoading(true)
-     axios.get('https://jsonplaceholder.typicode.com/photos')
-     .then((res)=>{
-      setData(res.data);
-      
-      setLoading(false)
-     
-     })
-     .catch((err)=>{console.error("api fetch failed",err);
-      setLoading(false);
+  if (isLoading) return <p>Loading...</p>;
+  if (isError) return <p>Error: {error.message}</p>;
 
-     })
-  },[])
-  
-   /*"albumId": 1,
-    "id": 1,
-    "title": "accusamus beatae ad facilis cum similique qui sunt",
-    "url": "https://via.placeholder.com/600/92c952",
-    "thumbnailUrl": "https://via.placeholder.com/150/92c952"*/
 
-   const columns = [
-    {
-      title: "albumId",
-      dataIndex: "albumId",
-      key: "albumId",
-    },
+
+
+
+  const columns = [
     {
       title: "ID",
       dataIndex: "id",
-      key: "userId",
+      key: "id",
+     
     },
     {
       title: "Title",
@@ -45,36 +25,17 @@ const Fetch = () => {
       key: "title",
     },
     {
-      title: "url",
-      dataIndex: "url",
-      key: "url",
-     
-    },
-    {
-      title: "thumbnailUrl",
-      dataIndex: "thumbnailUrl",
-      key: "thumbnailUrl",
-     
+      title: "Status",
+      dataIndex: "completed",
+      key: "completed",
+    render: (completed) => (
+  completed ? <span>Completed</span> : <span>Not Completed</span>
+)
+
     },
   ];
 
-  return (
-    <>
-    
-    <h1 >Fetching Data from API</h1>
-
-    <Table
-      dataSource={data}
-      columns={columns}
-      loading={loading}
-      rowKey="id"
-      bordered
-    />
-  
-    
-      </>
-   
-  );
+  return <Table dataSource={data} columns={columns} rowKey="id" />;
 };
 
 export default Fetch;
