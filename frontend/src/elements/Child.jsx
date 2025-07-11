@@ -1,21 +1,55 @@
-import React from 'react';
-
-
-
-
-
+import React from 'react'
+import {Table,Button} from "antd"
 
 const Child = (props) => {
-  console.log('props in Child:', props);
+const { persons,message } = props;
 
+  console.log(persons);
+
+  const columns=[
+
+    {
+    title:"id",
+    dataIndex:"id",
+    key:"id"
+
+    },
+     {
+    title:"name",
+    dataIndex:"name",
+    key:"name"
+
+    },
+     {
+    title:"age",
+    dataIndex:"age",
+    key:"age"
+
+    },
+     {
+    title:"city",
+    dataIndex:"city",
+    key:"city"
+
+    },
+   
+  ]
+
+  
+
+    const sendData = () => {
+    if (message) {
+     
+     message("hello")
+    }
+  };
 
   return (
     <>
-      <h1>Child Component</h1>
-          <h1>{props.name}</h1>
-    
+      <Table dataSource={persons} columns={columns} rowKey="id" />
+      <Button type="primary" onClick={sendData}> Send Message to Parent</Button>
     </>
   );
-}
+};
 
 export default Child;
