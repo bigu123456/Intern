@@ -1,49 +1,100 @@
 import React from 'react'
+import Child from './Child'
 import { useState } from 'react'
-import Child from './Child';
-
+import Students from './Students'
+import Testapi from './Testapi'
+// import ChildDemo from './childDemo'
+import ChildDemo from './childDemo'
 
 const Parent = () => {
-  const [person, setperson] = useState("");
+  const [filter, setfilter] = useState("")
+  const [students, setstudents] = useState("")
+  const [first, setfirst] = useState("")
+  const [number, setNUmber]=useState(10)
+  console.log("numbers", number)
   const array=[
-    {id:1, name:"Bigyan",age:22,city:"kathmandu"},
-    {id:2, name:"Biswash",age:22,city:"kathmandu"},
-    {id:3, name:"ujwal",age:22,city:"kathmandu"},
-    {id:4, name:"saroj",age:22,city:"kathmandu"},
-    {id:5, name:"agaman",age:22,city:"kathmandu"},
-    {id:6, name:"sujal",age:22,city:"kathmandu"},
-    {id:7, name:"roman",age:22,city:"kathmandu"},
+
+    {
+      id:1, name:"Bigyan", age:22,city:"Morang",number:9810205962,
+    },
+    {
+      id:2, name:"Biswash", age:22,city:"kathamndu",number:9876543212
+    },
+    {
+      id:3,name:'ujwal', age:"20", city:"Dharan",number:1234567890
+    },
+    {
+      id:4, name:"Saroj", age:21,city:"jhapa",number:5678998765
+    },
+    {
+      id:5, name:"Adim",age:20, city:"Biratnagar", number:9817367977
+    },
+    {
+      id:6, name:"subash", age:30,city:"belbari", number:9810347632
+    }
   ]
   const [data, setdata] = useState(array)
-  
-  const handlesearch=(e)=>{
-    const values=e.target.value
-    setperson(values);
+  const handle=(e)=>{
+    const item=e.target.value
+    setfilter(item)
   }
-  const search=data.filter(items=>items.name.toLowerCase().includes(person.toLowerCase()))
-  console.log("here is  array",search)
+  const fil=data.filter(items=>items.name.toLowerCase().includes(filter.toLowerCase())||
+  items.city.toLowerCase().includes(filter.toLowerCase())||
+  items.age.toString().includes(filter.toString())||
+  items.number.toString().includes(filter.toString())
+)
 
-  const handleaddperson = (values) => {
-  const newPerson = {
-    id: data.length + 1,
-    ...values
-    
-  };
-  setdata((prev) => [...prev, newPerson]);
-};
+  const addperson=(value)=>{
+   const newperson={
+    id:data.length+1,
+    ...value
+
+
+   }
+   setdata((prev)=>[...prev,newperson])
+  }
+  const deleteperson=(ID)=>
+    {
+      const del=data.filter(user => user.id !== ID)
+    setdata(del)
+   }
+   const items=(value)=>{
+    console.log("data come from child component", value)
+    setstudents(value)
+   }
+   const gaindata=(datas)=>{
+    setfirst(datas)
+    console.log("data from testapi", datas)
+   }
 
   return (
     <>
-    <h1>learning props and filter and add </h1>
+    <div>
+   <h1> learning props delete and filter and add </h1>
+
+     <Testapi  num={gaindata}/>
+      <h3>{first}</h3>
+    </div>
+ 
+<div className="relative w-full h-20"> 
+  <div className="absolute top-4 right-4">
     <input
-    type="text"
-    value={person}
-    onChange={handlesearch}
+      type="text"
+      value={filter}
+      onChange={handle}
+      className="rounded-xl px-4 py-2 border border-gray-300 shadow-md"
+      placeholder="Search..."
     />
-  
-    
-    
-    <Child  user={search} addperson={handleaddperson} />
+  </div>
+</div>
+
+   
+    <Child name={fil} pass={addperson} remove={deleteperson} />
+    <Students senddata={items}/> <br></br>
+   
+
+    <h3>{students}</h3>
+    <ChildDemo number={number} setNumber={setNUmber}/>
     </>
   )
 }

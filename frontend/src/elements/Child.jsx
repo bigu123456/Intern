@@ -1,92 +1,122 @@
-import React from 'react'
-import { Table} from "antd"
-import {Button, Form,Input} from "antd";
-
-
+import React, { useState } from 'react'
+import { Table, Button, Popconfirm, Modal, Form, Input,InputNumber } from 'antd'
 
 const Child = (props) => {
-  const{user,addperson}=props
-  console.log(user);
+  const { name, pass, remove } = props
+  const [visible, setVisible] = useState(false)
+  const [form] = Form.useForm()
 
-  const columns=[
+  const columns = [
     {
-      title:"id",
-      dataIndex:"id",
-      key:"id"
-    },
-     {
-      title:"name",
-      dataIndex:"name",
-      key:"name"
-    },
-     {
-      title:"age",
-      dataIndex:"age",
-      key:"age"
+      title: 'id',
+      dataIndex: 'id',
+      key: 'id',
     },
     {
-      title:"city",
-      dataIndex:"city",
-      key:"city"
-
+      title: 'name',
+      dataIndex: 'name',
+      key: 'name',
     },
-   
-
+    {
+      title: 'age',
+      dataIndex: 'age',
+      key: 'age',
+    },
+    {
+      title: 'city',
+      dataIndex: 'city',
+      key: 'city',
+    },
+    {
+      title:"number",
+      dataIndex:"number",
+      key:"number"
+    },
+    {
+      title: 'Actions',
+      key: 'actions',
+      render: (_, record) => (
+        <Popconfirm
+          title="Are you sure to delete this user?"
+          onConfirm={() => remove(record.id)}
+          okText="Yes"
+          cancelText="No"
+        >
+          <Button danger>Delete</Button>
+        </Popconfirm>
+      ),
+    },
   ]
 
-  
+  const handleAdd = (values) => {
+    pass(values)
+    form.resetFields()
+    setVisible(false)
+  }
+
   return (
     <>
-    
-    <div className='bg-yellow-300 rounded-sm shadow-sm py-5 w-1/5'>
-      <Form  onFinish={addperson}>
-<Form.Item 
-name="name"
-rules={[{required:true, message:"enetr your name"}]}
->
-  <Input
-  placeholder='enetr your name'
-  className='w-40'
-  />
+      <div style={{ marginBottom: 16 }}>
+        <Button type="primary" onClick={() => setVisible(true)}>
+          Add User
+        </Button>
+      </div>
 
-</Form.Item>
-<Form.Item
-name="age" 
+      
+      <Modal
+        title="Add New User"
+        open={visible}
+        onCancel={() => setVisible(false)}
+        footer={null}
+      >
+        <Form form={form} onFinish={handleAdd} layout="vertical">
+          <Form.Item
+            name="name"
+            label="Name"
+            rules={[{ required: true, message: 'Enter your name' }]}
+          >
+            <Input placeholder="Enter your name" />
+          </Form.Item>
 
-rules={[{required:true, message:"enetr your age"}]}
->
-  <Input
-  placeholder='enetr your name'
-  className='w-40'
-  />
+          <Form.Item
+            name="age"
+            label="Age"
+            rules={[{ required: true, message: 'Enter your age' }]}
+          >
+            <Input placeholder="Enter your age" />
+          </Form.Item>
 
-</Form.Item>
-<Form.Item 
-name="city"
+          <Form.Item
+            name="city"
+            label="City"
+            rules={[{ required: true, message: 'Enter your city' }]}
+          >
+            <Input placeholder="Enter your city" />
+          </Form.Item>
 
-rules={[{required:true, message:"enetr your city"}]}
->
-  <Input
-  placeholder='enetr your name'
-  className='w-40'
-  />
+          <Form.Item>
+            <Form.Item
+            name="number"
+            label="number"
+            rules={[{ required: true, message: 'Enter your number' }]}
+          >
+            <InputNumber
+             placeholder="Enter your number"
+             className='w-full' />
+          </Form.Item>
 
-</Form.Item>
-<Button type='primary' htmlType='submit' >add</Button>
+          <Form.Item></Form.Item>
+            <Button type="primary" htmlType="submit" block>
+              Add
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
 
-    </Form>
      
-    </div>
-<Table dataSource={user} columns={columns} rowKey="id"></Table>
-
-    
-  
-   
+      <Table dataSource={name} columns={columns} rowKey="id" />
     </>
   )
 }
-
-
-
 
 export default Child
