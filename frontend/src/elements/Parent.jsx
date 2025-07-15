@@ -3,15 +3,15 @@ import Child from './Child'
 import { useState } from 'react'
 import Students from './Students'
 import Testapi from './Testapi'
-// import ChildDemo from './childDemo'
-import ChildDemo from './childDemo'
+
+
+
 
 const Parent = () => {
   const [filter, setfilter] = useState("")
   const [students, setstudents] = useState("")
   const [first, setfirst] = useState("")
-  const [number, setNUmber]=useState(10)
-  console.log("numbers", number)
+ 
   const array=[
 
     {
@@ -94,7 +94,7 @@ const Parent = () => {
    
 
     <h3>{students}</h3>
-    <ChildDemo number={number} setNumber={setNUmber}/>
+    
     </>
   )
 }

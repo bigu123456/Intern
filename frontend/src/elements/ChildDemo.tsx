@@ -1,18 +1,22 @@
+import React from 'react';
+import {Button} from "antd"
 
-type ChildDemoProps={
-number: number,
-setNumber: React.Dispatch<React.SetStateAction<number>>
-}
-const ChildDemo:React.FC<ChildDemoProps> = ({number, setNumber}) => {
 
-    setNumber(1000);
 
+
+
+
+const ChildDemo = ({ text, settext }) => {
   return (
-    <div>childDemo
+    <>
+      <h1>childdemo</h1>
+      <p>Number from parent: {text}</p>
 
-        child demo demo
-    </div>
-  )
-}
+    
+     
+      <Button  type='primary' onClick={()=>settext("hello from childdemo")}>click</Button>
+    </>
+  );
+};
 
-export default ChildDemo
+export default ChildDemo;

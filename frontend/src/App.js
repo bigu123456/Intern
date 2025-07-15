@@ -33,6 +33,8 @@ import Fake from "./elements/Fake";
 
 import Parent from "./elements/Parent";
 import Testapi from "./elements/Testapi";
+import Parents from "./elements/Parents";
+import Login from "./elements/Login";
 
 const queryClient = new QueryClient();
 
@@ -70,6 +72,8 @@ const App = () => {
             {/* Now these routes just call components */}
           
             <Route path="/Parent" element={<Parent />} />
+            <Route path="Parents" element={<Parents/>}/>
+            <Route path="Login"element={<Login/>}/>
           </Routes>
 
           {/* Toasts (for notifications) */}
