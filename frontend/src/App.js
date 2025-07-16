@@ -35,6 +35,7 @@ import Parent from "./elements/Parent";
 import Testapi from "./elements/Testapi";
 import Parents from "./elements/Parents";
 import Login from "./elements/Login";
+import Typee from "./elements/Typee.tsx";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +75,8 @@ const App = () => {
             <Route path="/Parent" element={<Parent />} />
             <Route path="Parents" element={<Parents/>}/>
             <Route path="Login"element={<Login/>}/>
+            <Route path="Typee"element={<Typee/>}/>
+           
           </Routes>
 
           {/* Toasts (for notifications) */}
