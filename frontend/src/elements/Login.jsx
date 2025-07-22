@@ -16,7 +16,7 @@ const Login = () => {
    
   const onFinish = (values) => {
   if (editingId) {
-    
+     
     setinformation(prev =>
       prev.map(item =>
         item.id === editingId ? { ...item, ...values } : item

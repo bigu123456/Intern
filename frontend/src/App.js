@@ -36,6 +36,8 @@ import Testapi from "./elements/Testapi";
 import Parents from "./elements/Parents";
 import Login from "./elements/Login";
 import Typee from "./elements/Typee.tsx";
+import Make from "./elements/Make.jsx";
+import Page from "./components/Page.jsx";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +71,7 @@ const App = () => {
             <Route path="/Usertable" element={<Usertable />} />
             <Route path="/Fake" element={<Fake />} />
             <Route path="Testapi" element={<Testapi/>}/>
+            <Route path="Make" element={<Make/>}/>
 
             {/* Now these routes just call components */}
           
@@ -76,6 +79,7 @@ const App = () => {
             <Route path="Parents" element={<Parents/>}/>
             <Route path="Login"element={<Login/>}/>
             <Route path="Typee"element={<Typee/>}/>
+            <Route path="Page" element={<Page/>}/>
            
           </Routes>
 
