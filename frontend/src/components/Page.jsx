@@ -11,6 +11,7 @@ import {
 
 
 
+
 const Page = () => {
   return (
    <>
@@ -42,14 +43,83 @@ const Page = () => {
       <Button type="primary">Order</Button>
     </div>
   ))}
+  <div  className='grid place-items-center'>
+    <h1 className='text-blue-950'>Have Any Questions?</h1>
+    <div className='flex space-x-10   '>
+   <div className='bg-gray-500 w-[500px] h-[200px] p-4'>
+       <p>does the car give good services?</p>
+        <p>does the car give good services?</p>
+         <p>does the car give good services?</p>
+          <p>does the car give good services?</p>
+           <p>does the car give good services?</p>
+    </div>
+   <div className='bg-gray-500 w-[500px] h-[200px] p-4'>
+       <p>does the car give good services?</p>
+        <p>does the car give good services?</p>
+         <p>does the car give good services?</p>
+          <p>does the car give good services?</p>
+           <p>does the car give good services?</p>
+    </div>
+    
+    </div>
+    
+
+  </div>
+ <div className="flex flex-col items-center h-86 w-full">
+  <h1 className="text-green-700 text-3xl font-bold mb-6 text-center">
+    Car Rental Service in Nepal
+  </h1>
+
+  <div className="flex space-x-10">
+    <div>
+      <p>Rent a Car in Kathmandu</p>
+      <p>Rent a Car in Kathmandu</p>
+      <p className='text-green-500'>Rent a Car in Kathmandu</p>
+      <p className='text-green-600'>Rent a Car in Kathmandu</p>
+      <p>Rent a Car in Kathmandu</p>
+    </div>
+    <div>
+      <p>Rent a Car in Kathmandu</p>
+      <p>Rent a Car in Kathmandu</p>
+      <p>Rent a Car in Kathmandu</p>
+      <p className='text-green-600'>Rent a Car in Kathmandu</p>
+      <p className='text-green-600'>Rent a Car in Kathmandu</p>
+    </div>
+    <div>
+      <p>Rent a Car in Kathmandu</p>
+      <p>Rent a Car in Kathmandu</p>
+      <p className='text-green-600'>Rent a Car in Kathmandu</p>
+      <p className='text-green-600'>Rent a Car in Kathmandu</p>
+      <p>Rent a Car in Kathmandu</p>
+    </div>
+  </div>
+</div>
+
+</div>
+<div className='flex bg-[rgb(25,158,28)]  text-white text-lg '>
+<div className=" py-16 px-16 w-full h-[400px]">
+  <h1 className='mb-10 leading-relaxed'>Call us for further information.<br>
+
+  </br> Customer care is here to help you<br></br> anytime.</h1>
+
+
+</div>
+<div className='pr-10 '>
+  <p className='text-lg'>call now us </p>
+  <p className='text-lg font-bold'>9810205962</p>
+  <button
+  type="submit"
+  className="bg-[rgb(25,158,28)] text-white px-3 py-1 text-sm rounded-md hover:bg-[rgb(20,130,22)] transition"
+>
+  Contact Us
+</button>
+
+
+</div>
 </div>
 
 
-<div className='"bg-[rgb(25,158,28)] py-10 px-10'>
-  <h1>Call us for further information.<br>
-  </br> Customer care is here to help you anytime.</h1>
 
-</div>
 <div className= ' flex bg-black px-10 py-10 space-x-6'>
   <div className='space-10 text-white '>
 <h1 >about us</h1>
