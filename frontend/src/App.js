@@ -38,6 +38,7 @@ import Login from "./elements/Login";
 import Typee from "./elements/Typee.tsx";
 import Make from "./elements/Make.jsx";
 import Page from "./components/Page.jsx";
+import Food from "./components/Food.jsx";
 
 const queryClient = new QueryClient();
 
@@ -72,6 +73,7 @@ const App = () => {
             <Route path="/Fake" element={<Fake />} />
             <Route path="Testapi" element={<Testapi/>}/>
             <Route path="Make" element={<Make/>}/>
+            <Route path="Food" element={<Food/>}/>
 
             {/* Now these routes just call components */}
           
