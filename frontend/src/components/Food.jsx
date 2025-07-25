@@ -34,16 +34,16 @@ const Food = () => {
   return (
     <>
       <div>
-        <div className='flex justify-between px-10 py-5 bg-yellow-400 text-black'> 
+        <div className='flex justify-between px-10 py-5  text-blue-600 font-serif'> 
           <h1>Food services</h1>
           <h1> Welcome to Thakali Resturant</h1>
-          <Button type='primary' htmlType='submit' className='pr-20 rounded-md  shadow-sm text-xl w-30'>Login</Button>
+          <Button type='primary' htmlType='submit' className='text-xl '>Login</Button>
         </div>
-        <div className='flex justify-center items-center space-x-7 px-10 py-10 bg-yellow-400 text-black'>
-          <a className='cursor-pointer' href="/">Home</a>
-          <a className='cursor-pointer' href="/service">Service</a>
-          <a className='cursor-pointer' href="/contact">Contact Us</a>
-          <a className='cursor-pointer' href="/about">About Us</a>
+        <div className='flex justify-center items-center space-x-7 px-10 py-10 bg-yellow-400 '>
+          <a className='cursor-pointer text-white text-xl' href="/">Home</a>
+          <a className='cursor-pointer text-white text-xl' href="/service">Service</a>
+          <a className='cursor-pointer text-white text-xl' href="/contact">Contact Us</a>
+          <a className='cursor-pointer text-white text-xl' href="/about">About Us</a>
         </div>
       </div>
 
@@ -216,7 +216,7 @@ const Food = () => {
       </div>
 
       {/* Footer */}
-      <div className='flex bg-yellow-400 justify-between px-10 py-5 text-black'>
+      <div className='flex bg-yellow-400 justify-between px-10 py-5 '>
 
         <div>
           <h1>Quick links</h1>
@@ -270,8 +270,10 @@ const Food = () => {
           </div>
            
         </div>
+        
 
         <div>
+          <h1>Our Food</h1>
     <p><CoffeeOutlined /> Pizza</p>
     <p><ShopOutlined /> Burger</p>
     <p><ForkOutlined /> Pasta</p>

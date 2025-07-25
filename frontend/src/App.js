@@ -39,6 +39,9 @@ import Typee from "./elements/Typee.tsx";
 import Make from "./elements/Make.jsx";
 import Page from "./components/Page.jsx";
 import Food from "./components/Food.jsx";
+import Group from "./components/Group.jsx";
+import Footer from "./components/Footer.jsx";
+import Body from "./components/Body.jsx";
 
 const queryClient = new QueryClient();
 
@@ -74,6 +77,9 @@ const App = () => {
             <Route path="Testapi" element={<Testapi/>}/>
             <Route path="Make" element={<Make/>}/>
             <Route path="Food" element={<Food/>}/>
+            <Route path="Group" element={<Group/>}/>
+            <Route path="Footer"element={<Footer/>}/>
+            <Route path="Body" element={<Body/>}/>
 
             {/* Now these routes just call components */}
           
