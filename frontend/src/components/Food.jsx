@@ -37,13 +37,20 @@ const Food = () => {
         <div className='flex justify-between px-10 py-5  text-blue-600 font-serif'> 
           <h1>Food services</h1>
           <h1> Welcome to Thakali Resturant</h1>
-          <Button type='primary' htmlType='submit' className='text-xl '>Login</Button>
-        </div>
-        <div className='flex justify-center items-center space-x-7 px-10 py-10 bg-yellow-400 '>
-          <a className='cursor-pointer text-white text-xl' href="/">Home</a>
-          <a className='cursor-pointer text-white text-xl' href="/service">Service</a>
-          <a className='cursor-pointer text-white text-xl' href="/contact">Contact Us</a>
-          <a className='cursor-pointer text-white text-xl' href="/about">About Us</a>
+          <Button type='primary' htmlType='submit' className=' bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md 
+        transform transition duration-300 ease-in-out
+        hover:scale-110 hover:bg-blue-600 active:scale-95
+      " '>Login</Button>
+        </div >
+        <div className='flex justify-center items-center space-x-7 px-10 py-10 bg-yellow-400 cursor-pointer text-black text-xl '>
+          <a className='cursor-pointer text-white text-xl transform transition duration-300 ease-in-out
+                        hover:scale-80 hover:bg-red-600 active:scale-95' href="/">Home</a>
+          <a className='cursor-pointer text-white text-xl transform transition duration-300 ease-in-out
+                        hover:scale-80 hover:bg-red-600 active:scale-95' href="/service">Service</a>
+          <a className='cursor-pointer text-white text-xl transform transition duration-300 ease-in-out
+                        hover:scale-80 hover:bg-red-600 active:scale-95' href="/contact">Contact Us</a>
+          <a className='cursor-pointer text-white text-xl transform transition duration-300 ease-in-out
+                        hover:scale-80 hover:bg-red-600 active:scale-95' href="/about">About Us</a>
         </div>
       </div>
 

@@ -9,16 +9,21 @@ import Nature7 from "../images/Nature7.png";
 import Nature8 from "../images/Nature8.png";
 import Nature10 from "../images/Nature10.png";
 import Nature9 from "../images/Nature9.png";
-import {Input} from "antd"
+import { Input} from "antd"
+import { SearchOutlined } from "@ant-design/icons";
 
 const Body = () => {
   return (
     <>
       <div className="text-right pr-20 px-6 py-6 ">
-  <input
+  <Input
+  
+  
     type="search"
-    placeholder="Search..."
-    className="w-32 rounded-md px-2 py-1 border  "
+     prefix={<SearchOutlined />}
+    placeholder="Search........"
+    className="w-64 rounded-md px-2 py-1 border  "
+    
   />
 </div>
       <div className='flex justify-center font-Cursive'>
