@@ -43,6 +43,7 @@ import Group from "./components/Group.jsx";
 import Footer from "./components/Footer.jsx";
 import Body from "./components/Body.jsx";
 import Regi from "./components/Regi.jsx";
+import Forms from "./components/Forms.jsx";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +83,7 @@ const App = () => {
             <Route path="Footer"element={<Footer/>}/>
             <Route path="Body" element={<Body/>}/>
             <Route path="Regi" element={<Regi/>}/>
+            <Route path="Forms"element={<Forms/>}/>
 
             {/* Now these routes just call components */}
           
