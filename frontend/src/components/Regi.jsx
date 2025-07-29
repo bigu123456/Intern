@@ -11,9 +11,8 @@ const Regi = () => {
 
   const onFinish=(values)=>{
    form.resetFields()
- 
-   
-    console.log(values)
+   console.table(values)
+    console.count()
     
   }
   return (
@@ -47,7 +46,9 @@ const Regi = () => {
     
         label="username"
         name="username"
-        rules={[{required:true, message:"enter your name"}]}
+        rules={[{required:true, message:"enter your name"},
+          {min:6, message:"enetr minimun 6 character"}
+        ]}
         >
           <Input
           
@@ -60,7 +61,10 @@ const Regi = () => {
         <Form.Item
         label="password"
         name="password"
-        rules={[{required:true, message:"enter your age"}]}
+        rules={[{required:true, message:"enter your age"},
+          { min: 6, message: "Password must be at least 6 characters" }
+
+        ]}
         >
           <Input
           placeholder='enetr your age'/>
