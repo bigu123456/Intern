@@ -46,9 +46,9 @@ import Regi from "./components/Regi.jsx";
 import Forms from "./components/Forms.jsx";
 import Todos from "./components/Todos.jsx";
 import Images from "./components/Images.jsx";
-import Purchase from "./Midas/Purchase.jsx";
-import Return from "./Midas/Return.jsx";
-import List from "./Midas/List.jsx"
+
+import Inventory from "./Midas/Inventory.jsx";
+import Returnlist from "./Return/Retrunlist.jsx";
 
 
 
@@ -103,9 +103,11 @@ const App = () => {
             <Route path="Typee"element={<Typee/>}/>
             <Route path="Page" element={<Page/>}/>\
            
-            <Route path="Purchase"element={<Purchase/>}/>
-            <Route path="Return" element={<Return/>}/>
-            <Route path="List" element={<List/>}/>
+            
+            <Route path="Inventory" element={<Inventory/>}/>
+            <Route path="Returnlist"element={<Returnlist/>}/>
+           
+           
            
           </Routes>
 

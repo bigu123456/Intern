@@ -1,13 +1,11 @@
-import { Table, Button } from "antd";
-import { UndoOutlined } from "@ant-design/icons";
-import Header from "../elements/Header";
-import{Input} from "antd"
+import React, { useState } from "react";
+import { Table, Input } from "antd";
 
 const Purchase = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+
   const columns = [
-   
     { title: "Item Name", dataIndex: "itemName", key: "itemName" },
-    
     { title: "GR No", dataIndex: "grNo", key: "grNo" },
     { title: "Bill No", dataIndex: "billNo", key: "billNo" },
     { title: "Bill Date", dataIndex: "billDate", key: "billDate" },
@@ -28,74 +26,38 @@ const Purchase = () => {
 
   return (
     <>
-      <Header />
-
-     
-
-   
-      <div className="flex py-5 px-10 gap-4">
-        <Button type="primary">Purchase Return List</Button>
-        <Button type="primary">Purchase Return List</Button>
+      <div className="flex flex-wrap gap-3 bg-white rounded-lg shadow-md ">
+        {columns.map((col, index) => {
+          if (col.title === "Item Name") {
+            return (
+              <div
+                key={index}
+                className="bg-gray-200 px-2 py-1 rounded"
+                style={{ minWidth: "140px", textAlign: "center" }}
+              >
+                <Input
+                  size="small"
+                  placeholder="Item Name"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            );
+          } else {
+            return (
+              <div
+                key={index}
+                className="bg-gray-200 text-xs text-gray-700 px-2 py-1 rounded"
+                style={{ minWidth: "80px", textAlign: "center" }}
+              >
+                {col.title}
+              </div>
+            );
+          }
+        })}
       </div>
 
-    
-      <div className="px-10 flex items-center gap-2">
-        <UndoOutlined style={{ fontSize: "16px" }} />
-        <h1 className="text-base font-semibold">Purchase Return</h1>
-      </div>
-      <div className="flex gap-8 px-12 py-10">
-        <div>
-           <p>store</p>
-           <Input
-           type="search"
-           className="w-96"
-           placeholder="select store"
-           />
-
-        </div>
-        <div>
-          <p>Suplier name</p>
-         <Input
-           type="search"
-           className="w-96"
-           placeholder="select store"
-           />
-
-        </div>
-       
-        
-
-      </div>
-    
-      <div className="flex flex-wrap gap-2 py-10 px-10 bg-white rounded-lg shadow-md ">
-        {columns.map((col, index) => (
-          <div
-            key={index}
-            className="bg-gray-200 text-xs text-gray-700 px-2 py-1 rounded"
-            style={{ minWidth: "80px", textAlign: "center" }}
-          >
-            {col.title}
-          </div>
-        ))}
-        <Table columns={columns} bordered pagination={false} />
-      </div>
-      
-
-    
-     
-
-   
-      <div className="flex justify-between px-10 py-10">
-        <div className="bg-white rounded-md shadow-md flex w-1/3 min-h-56 p-4">
-          <h3>Scheme Info</h3>
-        </div>
-        <div className="bg-white rounded-md shadow-md flex w-1/3 min-h-56 p-4">
-          <h3>Additional Information</h3>
-        </div>
-        <div className="bg-white rounded-md shadow-md flex w-1/3 min-h-56 p-4">
-          <h3>Gross Amount:</h3>
-        </div>
-      </div>
+      <Table columns={columns} bordered pagination={true} />
     </>
   );
 };
