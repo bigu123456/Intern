@@ -49,6 +49,7 @@ import Images from "./components/Images.jsx";
 
 import Inventory from "./Midas/Inventory.jsx";
 import Returnlist from "./Return/Retrunlist.jsx";
+import Log from "./components/Log.jsx";
 
 
 
@@ -61,6 +62,7 @@ const App = () => {
         <Router>
           <Routes>
             {/* Public Routes */}
+            <Route path="Log" element={<Log/>}/>
             <Route path="/Test" element={<Test />} />
             <Route path="/Loginpage" element={<LoginPage />} />
             <Route path="/" element={<Dashbaord />} />
