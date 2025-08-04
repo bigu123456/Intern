@@ -71,6 +71,15 @@ const List = () => {
               
 
             </Form.Item>
+            <Form.Item
+              label="CC:"
+              name="CC"
+              rules={[{ required: true, message: "Enter discount" }]}
+            >
+              <Input placeholder="000" className="w-40" />
+              
+
+            </Form.Item>
           </Form>
 
           <h3>Amount After Tax:</h3>

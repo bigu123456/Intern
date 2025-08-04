@@ -1,8 +1,9 @@
-import React, { useState } from "react";
-import { Table, Input } from "antd";
+import React from "react";
+import { Table } from "antd";
+import Calculation from "./Calculation";
 
 const Purchase = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+ 
 
   const columns = [
     { title: "Item Name", dataIndex: "itemName", key: "itemName" },
@@ -26,36 +27,14 @@ const Purchase = () => {
 
   return (
     <>
-      <div className="flex flex-wrap gap-3 bg-white rounded-lg shadow-md ">
-        {columns.map((col, index) => {
-          if (col.title === "Item Name") {
-            return (
-              <div
-                key={index}
-                className="bg-gray-200 px-2 py-1 rounded"
-                style={{ minWidth: "140px", textAlign: "center" }}
-              >
-                <Input
-                  size="small"
-                  placeholder="Item Name"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </div>
-            );
-          } else {
-            return (
-              <div
-                key={index}
-                className="bg-gray-200 text-xs text-gray-700 px-2 py-1 rounded"
-                style={{ minWidth: "80px", textAlign: "center" }}
-              >
-                {col.title}
-              </div>
-            );
-          }
-        })}
-      </div>
+  <div className="space-x-5">
+     <Calculation/>
+
+  </div>
+
+   
+
+    
 
       <Table columns={columns} bordered pagination={true} />
     </>

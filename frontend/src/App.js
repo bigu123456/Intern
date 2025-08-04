@@ -50,6 +50,8 @@ import Images from "./components/Images.jsx";
 import Inventory from "./Midas/Inventory.jsx";
 import Returnlist from "./Return/Retrunlist.jsx";
 import Log from "./components/Log.jsx";
+import AxiosInstances from "./Axios/AxiosInstances.jsx";
+import Uploader from "./Axios/Uploader.js";
 
 
 
@@ -103,11 +105,13 @@ const App = () => {
             <Route path="Parents" element={<Parents/>}/>
             <Route path="Login"element={<Login/>}/>
             <Route path="Typee"element={<Typee/>}/>
-            <Route path="Page" element={<Page/>}/>\
+            <Route path="Page" element={<Page/>}/>
            
             
             <Route path="Inventory" element={<Inventory/>}/>
             <Route path="Returnlist"element={<Returnlist/>}/>
+            <Route path="AxiosInstances" element={<AxiosInstances/>}/>
+            <Route path="Uploader"element={<Uploader/>}/>
            
            
            
