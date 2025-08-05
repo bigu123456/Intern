@@ -55,6 +55,7 @@ import Uploader from "./Axios/Uploader.js";
 
 
 
+
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -112,6 +113,7 @@ const App = () => {
             <Route path="Returnlist"element={<Returnlist/>}/>
             <Route path="AxiosInstances" element={<AxiosInstances/>}/>
             <Route path="Uploader"element={<Uploader/>}/>
+          
            
            
            
