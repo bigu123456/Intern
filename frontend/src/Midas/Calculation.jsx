@@ -66,9 +66,9 @@ const Calculation = () => {
 
   const clear = () => {
     form.resetFields();
-    setDiscountAmount("0.00");
-    setVatAmount("0.00");
-    setTotalAmount("0.00");
+    setDiscountAmount("");
+    setVatAmount("");
+    setTotalAmount("");
     setShowTotal(false);
   };
 
@@ -113,7 +113,9 @@ const Calculation = () => {
             <Input placeholder="Enter Dis%" />
           </Form.Item>
 
-          <Form.Item label="VAT%" name="VAT" rules={[{required:true, message:"enter a VAT"}]}>
+          <Form.Item label="VAT%" 
+          name="VAT" 
+          rules={[{required:true, message:"enter a VAT"}]}>
             <Input placeholder="Enter VAT%" />
           </Form.Item>
 

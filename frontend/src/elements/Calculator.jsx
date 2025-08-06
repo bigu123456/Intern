@@ -12,6 +12,9 @@ const Calculator = () => {
     const details={ key:data.length+1,
 
    ...values}
+
+
+   
    setdata([...data, details])
 
     

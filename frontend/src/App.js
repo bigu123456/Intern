@@ -52,6 +52,7 @@ import Returnlist from "./Return/Retrunlist.jsx";
 import Log from "./components/Log.jsx";
 import AxiosInstances from "./Axios/AxiosInstances.jsx";
 import Uploader from "./Axios/Uploader.js";
+import Try from "./components/Try.jsx";
 
 
 
@@ -113,6 +114,7 @@ const App = () => {
             <Route path="Returnlist"element={<Returnlist/>}/>
             <Route path="AxiosInstances" element={<AxiosInstances/>}/>
             <Route path="Uploader"element={<Uploader/>}/>
+            <Route path="Try" element={<Try/>}/>
           
            
            
