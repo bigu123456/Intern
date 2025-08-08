@@ -1,22 +1,29 @@
-import React from 'react'
-import { useQuery } from '@tanstack/react-query'
 
-export const Uploader = () => {
-    const {data}=useQuery({
-        queryFn:async()=>{
-             const res=await fetch("https://jsonplaceholder.typicode.com/users")
-             return res.json()
-             
-        }
-    })
-    console.table(data)
-  return (
-    <>
-    <div>
+import axiosInstance from "./AxiosInstances";
 
-    </div>
-    </>
-  )
-}
 
-export default Uploader
+
+// POST  (uploader)
+export const uploader = async (url, payload) => {
+  const { data } = await axiosInstance.post(url, payload);
+  return data;
+};
+
+// PUT  (putUploader)
+export const putUploader = async (url, payload) => {
+  const { data } = await axiosInstance.put(url, payload);
+  return data;
+};
+
+// DELETE  (deleteUploader)
+export const deleteUploader = async (url) => {
+  const { data } = await axiosInstance.delete(url);
+  return data;
+};
+
+export default {
+ 
+  uploader,
+  putUploader,
+  deleteUploader,
+};

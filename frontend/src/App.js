@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { ApiProvider } from './elements/ApiContext';
 
-// Components
+
 import Test from "./elements/Test";
 import LoginPage from "./elements/Loginpage";
 import Dashbaord from "./elements/Dashboard";
@@ -50,9 +50,9 @@ import Images from "./components/Images.jsx";
 import Inventory from "./Midas/Inventory.jsx";
 import Returnlist from "./Return/Retrunlist.jsx";
 import Log from "./components/Log.jsx";
-import AxiosInstances from "./Axios/AxiosInstances.jsx";
-import Uploader from "./Axios/Uploader.js";
+
 import Try from "./components/Try.jsx";
+import Dropdown from "./Midas/Dropdown.jsx"
 
 
 
@@ -112,9 +112,10 @@ const App = () => {
             
             <Route path="Inventory" element={<Inventory/>}/>
             <Route path="Returnlist"element={<Returnlist/>}/>
-            <Route path="AxiosInstances" element={<AxiosInstances/>}/>
-            <Route path="Uploader"element={<Uploader/>}/>
+           
+         
             <Route path="Try" element={<Try/>}/>
+            <Route path="Dropdown"element={<Dropdown/>}/>
           
            
            
