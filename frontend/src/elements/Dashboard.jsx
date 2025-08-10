@@ -19,6 +19,7 @@ import {
   RightOutlined,
 } from "@ant-design/icons";
 
+import { useNavigate } from "react-router-dom"; // <--- Import useNavigate
 import Header from "./Header";
 import Bigyan from "./Bigyan";
 
@@ -38,9 +39,6 @@ const modules = [
       "Audit Logs",
     ],
   },
- 
-  
-  
   {
     title: "Admission And Discharge",
     description: "Admission Admission &",
@@ -331,10 +329,9 @@ const modules = [
   },
 ];
 
-
-
 function Dashboard() {
   const [hoveredModule, setHoveredModule] = useState(null);
+  const navigate = useNavigate(); // initialize navigate
 
   return (
     <>
@@ -345,7 +342,10 @@ function Dashboard() {
           <Title level={3} className="!mb-0">
             Modules
           </Title>
-          <Button type="text" className="text-gray-600 hover:text-blue-600 flex items-center">
+          <Button
+            type="text"
+            className="text-gray-600 hover:text-blue-600 flex items-center"
+          >
             All Modules <RightOutlined />
           </Button>
         </div>
@@ -357,11 +357,22 @@ function Dashboard() {
               className="relative"
               onMouseEnter={() => setHoveredModule(mod.title)}
               onMouseLeave={() => setHoveredModule(null)}
+              onClick={() => {
+                if (mod.title === "Inventory") {
+                  navigate("/Inventory");
+                }
+              }}
+              style={{ cursor: mod.title === "Inventory" ? "pointer" : "default" }}
             >
               <Card
                 hoverable
                 className={`!p-0 ${mod.bgColor} ${mod.borderColor} border rounded-lg cursor-pointer`}
-                bodyStyle={{ padding: 16, display: "flex", gap: 12, alignItems: "flex-start" }}
+                bodyStyle={{
+                  padding: 16,
+                  display: "flex",
+                  gap: 12,
+                  alignItems: "flex-start",
+                }}
               >
                 <div
                   className={`${mod.color} rounded-lg p-2 flex-shrink-0 flex items-center justify-center`}
@@ -399,7 +410,11 @@ function Dashboard() {
                           <RightOutlined />
                         </li>
                       );
-                    } else if (typeof opt === "object" && opt.label && opt.children) {
+                    } else if (
+                      typeof opt === "object" &&
+                      opt.label &&
+                      opt.children
+                    ) {
                       return (
                         <div key={i} className="group relative">
                           <li className="px-4 py-2 flex justify-between items-center hover:bg-blue-600 hover:text-white cursor-pointer whitespace-nowrap">

@@ -21,9 +21,11 @@ export const deleteUploader = async (url) => {
   return data;
 };
 
+
 export default {
  
   uploader,
   putUploader,
   deleteUploader,
 };
+
