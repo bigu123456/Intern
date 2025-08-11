@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import { Button, Modal, Form, Input, List, message } from "antd";
-import { useListInventory, useDeleteInventory, useEditInventory } from "../Services/inventoryService";
+import { ListInventory, useDeleteInventory, useEditInventory } from "../Services/inventoryService";
 
 const Dropdown = () => {
-  const { data = [], isLoading } = useListInventory();
+  //Fetch
+
+
+  const { data , isLoading } = ListInventory();
+
+
+
+  console.log("the data are",data)
+  //delete
   const deleteMutation = useDeleteInventory();
+  //update
   const editMutation = useEditInventory();
 
  
@@ -91,7 +100,7 @@ const Dropdown = () => {
 
       <Modal
         title="Edit Inventory Item"
-        visible={isModalVisible}
+        open={isModalVisible}
         onOk={handleEditSubmit}
         onCancel={handleCancel}
         okText="Save"

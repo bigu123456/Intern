@@ -54,6 +54,8 @@ import Log from "./components/Log.jsx";
 import Try from "./components/Try.jsx";
 import Dropdown from "./Midas/Dropdown.jsx"
 
+import Tokendata from "./Midas/Tokendata.jsx";
+
 
 
 
@@ -116,6 +118,8 @@ const App = () => {
          
             <Route path="Try" element={<Try/>}/>
             <Route path="Dropdown"element={<Dropdown/>}/>
+
+            <Route path="Tokendata" element={<Tokendata/>}/>
           
            
            
