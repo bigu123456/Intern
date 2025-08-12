@@ -1,0 +1,6 @@
+
+.custom-table .ant-table-thead > tr > th {
+  background-color:yellowgreen; 
+  color: white; 
+  font-weight: bold;
+}

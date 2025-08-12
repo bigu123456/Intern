@@ -3,24 +3,25 @@ import { uploader, putUploader, deleteUploader } from "../Axios/Uploader";
 import { fetcher } from "../Axios/Fetchdata";
 import { OnSuccess } from "../Axios/OnSuccess";
 
-const url=process.env.REACT_APP_API_URL
-// Fetch inventory counter list
-// export const ListInventory = (params) => {
-//   return useQuery({
-//     queryKey: ['inventoryCounter', params],
-//     queryFn: () => fetcher('inventory/get-dropdown/counter', params),
-//   });
-// };
+
+// const url = process.env.REACT_APP_API_URL;
 
 export const ListInventory = () => {
-  console.log("listinventory call");
+
   return useQuery({
-    
     queryKey: ['inventoryCounter'],
-    queryFn: () => fetcher(url,'inventory/get-dropdown/counter'),
-   
+    queryFn: () => fetcher('get-dropdown/supplier'),
   });
 };
+export const Listcounter = () => {
+
+  return useQuery({
+    queryKey: ['inventoryCounter'],
+    queryFn: () => fetcher('get-dropdown/counter'),
+  });
+};
+
+
 
 
 // Add new inventory counter
