@@ -1,6 +1,22 @@
+.custom-table .ant-table-thead > tr > th:first-child,
+.custom-table .ant-table-tbody > tr > td:first-child {
+  background-color: #edd281; 
+}
+
+.custom-table .ant-table-thead > tr > th,
+.custom-table .ant-table-tbody > tr > td {
+  border: 1px solid black; 
+  
+}
 
 .custom-table .ant-table-thead > tr > th {
-  background-color:yellowgreen; 
-  color: white; 
+  
+  color: rgb(0, 0, 0);
   font-weight: bold;
 }
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #a8aaa8 !important;
+  cursor: pointer;
+}
+
