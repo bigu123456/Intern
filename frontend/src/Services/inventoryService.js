@@ -20,6 +20,13 @@ export const Listcounter = () => {
     queryFn: () => fetcher('get-dropdown/counter'),
   });
 };
+export const Common = () => {
+
+  return useQuery({
+    queryKey: ['inventoryCounter'],
+    queryFn: () => fetcher('inventory/get-dropdown/supplier'),
+  });
+};
 
 
 
