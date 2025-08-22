@@ -4,6 +4,8 @@ import { fetcher } from "../Axios/Fetchdata";
 import { OnSuccess } from "../Axios/OnSuccess";
 
 
+
+
 // const url = process.env.REACT_APP_API_URL;
 
 export const ListInventory = () => {
@@ -13,20 +15,52 @@ export const ListInventory = () => {
     queryFn: () => fetcher('get-dropdown/supplier'),
   });
 };
-export const Listcounter = () => {
+// patients-morbality
+
+export const Report = () => {
+  const fromDate = '2002-01-01';
+  const toDate = '2082-01-28';
 
   return useQuery({
-    queryKey: ['inventoryCounter'],
-    queryFn: () => fetcher('get-dropdown/counter'),
+    queryKey: ['inpatientMorbidity', fromDate, toDate], 
+    queryFn: () => fetcher("/api/v1/reports/inpatient-morbidity", {
+      from: fromDate,
+      to: toDate
+    })
   });
 };
+//Hospital-Morbility
+
+export const Hospitals = () => {
+  const fromDate = '2080-01-01';
+  const toDate = '2082-01-28';
+
+  return useQuery({
+    queryKey: ['HospitalMorbidity', fromDate, toDate], 
+    queryFn: () => fetcher("/api/v1/reports/hospital-mortality", {
+      from: fromDate,
+      to: toDate
+    })
+  });
+};
+
+// Common
 export const Common = () => {
+  const fromDate = '2080-01-01';
+  const toDate = '2082-05-28';
 
   return useQuery({
-    queryKey: ['inventoryCounter'],
-    queryFn: () => fetcher('inventory/get-dropdown/supplier'),
+    queryKey: ['HospitalMorbidity', fromDate, toDate], 
+    queryFn: () => fetcher("/api/v1/reports/emergency-diseases", {
+      from: fromDate,
+      to: toDate
+    })
   });
 };
+
+
+
+
 
 
 

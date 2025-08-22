@@ -1,22 +1,23 @@
-.custom-table .ant-table-thead > tr > th:first-child,
-.custom-table .ant-table-tbody > tr > td:first-child {
-  background-color: #edd281; 
+.custom-table .ant-table-container {
+  border: 1px solid black; /* Full frame around the table */
 }
 
 .custom-table .ant-table-thead > tr > th,
 .custom-table .ant-table-tbody > tr > td {
-  border: 1px solid black; 
-  
+  border: 1px solid black; /* Inner cell borders */
 }
 
 .custom-table .ant-table-thead > tr > th {
-  
-  color: rgb(0, 0, 0);
+  background-color: #F4B183; /* Same peach color */
+  color: black; /* Black text for better readability */
   font-weight: bold;
 }
 
-.ant-table-tbody > tr:hover > td {
-  background-color: #a8aaa8 !important;
+
+
+
+/* Row hover effect */
+.custom-table .ant-table-tbody > tr:hover > td {
+  background-color: rgb(229, 237, 197) !important; /* Light green highlight */
   cursor: pointer;
 }
-

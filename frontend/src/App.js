@@ -58,6 +58,13 @@ import Tokendata from "./Midas/Tokendata.jsx";
 
 
 
+import Counter  from "./Midas/Counter.jsx";
+import LabTestTable from "./Midas/LabTestTable.jsx"
+import Hospital from "./Midas/Hospital.jsx";
+import Commons from "./Midas/Commons.jsx";
+
+
+
 
 const queryClient = new QueryClient();
 
@@ -120,7 +127,12 @@ const App = () => {
             <Route path="Dropdown"element={<Dropdown/>}/>
 
             <Route path="Tokendata" element={<Tokendata/>}/>
-          
+
+        
+          <Route path="Counter" element={<Counter/>}/>
+          <Route path="LabTestTable" element={<LabTestTable/>}/>
+          <Route path="Hospital" element={<Hospital/>}/>
+          <Route path="Commons" element={<Commons/>}/>
            
            
            

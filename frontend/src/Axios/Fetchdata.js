@@ -1,13 +1,14 @@
 
   import axiosInstance from "./AxiosInstances";
+  console.log("Axios base URL:", axiosInstance.defaults.baseURL);
 
 
   
 
 
 export const fetcher = async (url, params = {}) => {
-  console.log("url from fetcher", url);
-  console.log("params from fetcher", params);
+
+  
   
   const { data } = await axiosInstance.get(url, { params });
   return data;

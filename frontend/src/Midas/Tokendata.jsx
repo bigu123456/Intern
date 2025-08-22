@@ -1,21 +1,18 @@
 import { ListInventory } from '../Services/inventoryService';
-import { Input, Table } from 'antd';
-import { useState } from 'react';
+import {  Table } from 'antd';
+
 import './Tokendata.css'; 
 
 const Tokendata = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+
 
   const { data } = ListInventory();
   const dataList = data?.data || data || [];
+  console.log(dataList)
 
-  const filteredData = dataList.filter(item =>
-    item.name?.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  
 
-  const handleSearch = (e) => {
-    setSearchTerm(e.target.value);
-  };
+ 
 
   const columns = [
     { title: 'ID', dataIndex: 'id', key: 'id'  },
@@ -37,19 +34,12 @@ const Tokendata = () => {
    
 
   
-      <div className='  px-10 py-10 '>
-        <Input
-          className='py-3 w-32'
-          placeholder="Search by name"
-          value={searchTerm}
-          onChange={handleSearch}
-        />
-      </div>
+      
        <div className='flex space-x-11 gap-10 px-5 py-5'>
       <Table
         className="custom-table"
         columns={columns} 
-        dataSource={filteredData}
+        dataSource={dataList.slice(0,100)}
         
         rowKey="id"
       />
@@ -57,7 +47,31 @@ const Tokendata = () => {
       <Table
         className="custom-table"
         columns={columns}
-        dataSource={filteredData}
+        dataSource={dataList.slice(100, 200)}
+        rowKey="id"
+       
+           
+      />
+       <Table
+        className="custom-table"
+        columns={columns}
+        dataSource={dataList.slice(200, 300)}
+        rowKey="id"
+       
+           
+      />
+       <Table
+        className="custom-table"
+        columns={columns}
+        dataSource={dataList.slice(300, 400)}
+        rowKey="id"
+       
+           
+      />
+       <Table
+        className="custom-table"
+        columns={columns}
+        dataSource={dataList.slice(400, 500)}
         rowKey="id"
        
            

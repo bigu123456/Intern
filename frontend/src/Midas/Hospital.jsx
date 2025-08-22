@@ -1,9 +1,9 @@
 import React from 'react';
 import { Table } from 'antd';
-import { Report } from "../Services/inventoryService";
+import { Hospitals } from "../Services/inventoryService";
 
-const Dropdown = () => {
-  const { data } = Report();
+const Hospital = () => {
+  const { data } = Hospitals();
   console.log(data);
 
   if (!data?.data) return <p>Loading...</p>;
@@ -58,7 +58,7 @@ const Dropdown = () => {
   return (
     <>
       <div className="flex justify-center bg-gray-600 text-white px-5">
-        <h1>B.In-Patient Morbidity</h1>
+        <h1>Hospital Morbidity</h1>
       </div>
       <div className="flex px-5">
         <Table
@@ -74,4 +74,4 @@ const Dropdown = () => {
   );
 };
 
-export default Dropdown;
+export default Hospital;
