@@ -57,15 +57,15 @@ const Dropdown = () => {
 
   return (
     <>
-      <div className="flex justify-center bg-gray-600 text-white px-5">
+      <div className="flex justify-center bg-gray-600 text-white ">
         <h1>B.In-Patient Morbidity</h1>
       </div>
-      <div className="flex px-5">
+      <div className="flex ">
         <Table
           className="custom-table"
           columns={columns}
           dataSource={tableData}
-          bordered
+         
           pagination={false}
           scroll={{ x: true }}
         />

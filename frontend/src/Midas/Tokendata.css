@@ -8,7 +8,7 @@
 }
 
 .custom-table .ant-table-thead > tr > th {
-  background-color: #F4B183; /* Same peach color */
+  background-color: #fbece1; /* Same peach color */
   color: black; /* Black text for better readability */
   font-weight: bold;
 }

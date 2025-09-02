@@ -1,0 +1,352 @@
+[
+  {
+    "DE": 1,
+    "Test": "Haematology",
+    "children": [
+      { "DE": 2, "Test": "HB" },
+      { "DE": 3, "Test": "RBC Count" },
+      { "DE": 4, "Test": "TLC" },
+      { "DE": 5, "Test": "Platelets Count" },
+      { "DE": 6, "Test": "DLC" },
+      { "DE": 7, "Test": "ESR" },
+      { "DE": 8, "Test": "MCV" },
+      { "DE": 9, "Test": "MCH" },
+      { "DE": 10, "Test": "MCHC" },
+      { "DE": 11, "Test": "RDW" },
+      { "DE": 12, "Test": "Blood Group & Rh Type" },
+      { "DE": 13, "Test": "Coombs test" },
+      { "DE": 14, "Test": "Retics" },
+      { "DE": 15, "Test": "PBS/PBF" },
+      { "DE": 16, "Test": "HbA1c" },
+      {
+        "DE": 17,
+        "Test": "Special Stain",
+        "children": [
+          { "DE": 18, "Test": "MPO" },
+          { "DE": 19, "Test": "PAS" }
+        ]
+      },
+      { "DE": 20, "Test": "Sickling Test" },
+      { "DE": 21, "Test": "Urine for Hemosiderin" },
+      { "DE": 22, "Test": "BT" },
+      { "DE": 23, "Test": "CT" },
+      { "DE": 24, "Test": "PT-INR" },
+      { "DE": 25, "Test": "APTT" },
+      { "DE": 26, "Test": "Bone Marrow Analysis" },
+      { "DE": 27, "Test": "Aldehyde test" },
+      {
+        "DE": 28,
+        "Test": "MP Total",
+        "children": [
+          { "DE": 29, "Test": "PF" },
+          { "DE": 30, "Test": "PV" },
+          { "DE": 31, "Test": "P-MIX" }
+        ]
+      },
+      { "DE": 32, "Test": "Smear" },
+      {
+        "DE": 33,
+        "Test": "MP Pos",
+        "children": [
+          { "DE": 34, "Test": "PF" },
+          { "DE": 35, "Test": "PV" },
+          { "DE": 36, "Test": "P-MIX" }
+        ]
+      },
+      { "DE": 37, "Test": "MF" },
+      {
+        "DE": 38,
+        "Test": "Total",
+        "children": [
+          { "DE": 39, "Test": "Pos." }
+        ]
+      },
+      { "DE": 40, "Test": "LD Bodies" },
+      { "DE": 41, "Test": "Hb Electrophoresis" },
+      { "DE": 42, "Test": "LE cell" },
+      { "DE": 43, "Test": "AIC" },
+      { "DE": 44, "Test": "AEF" },
+      { "DE": 45, "Test": "FDP" },
+      { "DE": 46, "Test": "D-dimer" },
+      { "DE": 47, "Test": "Fac VIII" },
+      { "DE": 48, "Test": "Fac IX" },
+      { "DE": 49, "Test": "MCHC" },
+      { "DE": 50, "Test": "Cross Matching" },
+      { "DE": 51, "Test": "Others" }
+    ]
+  },
+  {
+    "DE": 52,
+    "Test": "Immunology",
+    "children": [
+      { "DE": 53, "Test": "Pregnancy Test (UPT)" },
+      { "DE": 54, "Test": "ASO" },
+      { "DE": 55, "Test": "CRP" },
+      { "DE": 56, "Test": "RA Factor" },
+      {
+        "DE": 57,
+        "Test": "TPHA",
+        "children": [
+          { "DE": 58, "Test": "Total" },
+          { "DE": 59, "Test": "+Ve" }
+        ]
+      },
+      { "DE": 60, "Test": "ANA" },
+      { "DE": 61, "Test": "Anti-dsDNA" },
+      {
+        "DE": 62,
+        "Test": "TP/PA",
+        "children": [
+          { "DE": 63, "Test": "VDRL" },
+          { "DE": 64, "Test": "Total" },
+          { "DE": 65, "Test": "+Ve" }
+        ]
+      },
+      { "DE": 66, "Test": "CEA" },
+      { "DE": 67, "Test": "CA-125" },
+      { "DE": 68, "Test": "CA-19.9" },
+      { "DE": 69, "Test": "CA-15.3" },
+      { "DE": 70, "Test": "Toxo" },
+      { "DE": 71, "Test": "Rubella" },
+      { "DE": 72, "Test": "CMV" },
+      { "DE": 73, "Test": "HSV" },
+      { "DE": 74, "Test": "Measles" },
+      { "DE": 75, "Test": "Echinococcus" },
+      { "DE": 76, "Test": "Amoebiasis" },
+      { "DE": 77, "Test": "PSA" },
+      { "DE": 78, "Test": "Ferritin" },
+      { "DE": 79, "Test": "Cysticercosis" },
+      { "DE": 80, "Test": "Brucella" },
+      { "DE": 81, "Test": "Thyroglobulin" },
+      { "DE": 82, "Test": "Anti TPO" },
+      { "DE": 83, "Test": "Protein Electrophoresis" },
+      { "DE": 84, "Test": "Anti-CCP" },
+      {
+        "DE": 85,
+        "Test": "RK-39",
+        "children": [
+          { "DE": 86, "Test": "Total" },
+          { "DE": 87, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 88,
+        "Test": "JE",
+        "children": [
+          { "DE": 89, "Test": "Total" },
+          { "DE": 90, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 91,
+        "Test": "Dengue",
+        "children": [
+          { "DE": 92, "Test": "Total" },
+          { "DE": 93, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 94,
+        "Test": "Rapid MP Test",
+        "children": [
+          { "DE": 95, "Test": "Total" },
+          { "DE": 96, "Test": "+Ve PV" },
+          { "DE": 97, "Test": "+Ve PF" },
+          { "DE": 98, "Test": "+Ve P-Mix" }
+        ]
+      },
+      { "DE": 99, "Test": "Mantoux Test" },
+      {
+        "DE": 100,
+        "Test": "Chikungunya",
+        "children": [
+          { "DE": 101, "Test": "Total" },
+          { "DE": 102, "Test": "+Ve PV" }
+        ]
+      },
+      { "DE": 103, "Test": "Scrub Typhus" },
+      { "DE": 104, "Test": "H. Pylori" },
+      { "DE": 105, "Test": "Leptospira" },
+      { "DE": 106, "Test": "Widal Test" },
+      { "DE": 107, "Test": "Others" }
+    ]
+  },
+  {
+    "DE": 108,
+    "Test": "Biochemistry",
+    "children": [
+      { "DE": 109, "Test": "Sugar" },
+      { "DE": 110, "Test": "Blood Urea" },
+      { "DE": 111, "Test": "Creatinine" },
+      { "DE": 112, "Test": "Sodium (Na)" },
+      { "DE": 113, "Test": "Potassium (K)" },
+      { "DE": 114, "Test": "Calcium" },
+      { "DE": 115, "Test": "Phosphorus" },
+      { "DE": 116, "Test": "Magnesium" },
+      { "DE": 117, "Test": "Uric Acid" },
+      { "DE": 118, "Test": "Total Cholesterol" },
+      { "DE": 119, "Test": "Triglycerides" },
+      { "DE": 120, "Test": "HDL" },
+      { "DE": 121, "Test": "LDL" },
+      { "DE": 122, "Test": "Amylase" },
+      { "DE": 123, "Test": "Micro Albumin" },
+      { "DE": 124, "Test": "Bilirubin" },
+      { "DE": 125, "Test": "SGPT" },
+      { "DE": 126, "Test": "Alk Phos" },
+      { "DE": 127, "Test": "SGOT" },
+      { "DE": 128, "Test": "Total Protein" },
+      { "DE": 129, "Test": "Gamma GT" },
+      { "DE": 130, "Test": "24hr Urine Protein" },
+      { "DE": 131, "Test": "24hr Urine U/A" },
+      { "DE": 132, "Test": "Creatinine Clearance" },
+      { "DE": 133, "Test": "Iron" },
+      { "DE": 134, "Test": "TIBC" },
+      { "DE": 135, "Test": "CPK-MB" },
+      { "DE": 136, "Test": "CPK-NAC" },
+      { "DE": 137, "Test": "Troponin" },
+      { "DE": 138, "Test": "Iso-Tro I" },
+      { "DE": 139, "Test": "Others" }
+    ]
+  },
+  {
+    "DE": 140,
+    "Test": "Bacteriology",
+    "children": [
+      { "DE": 141, "Test": "Gram Stain" },
+      {
+        "DE": 142,
+        "Test": "Culture",
+        "children": [
+          { "DE": 143, "Test": "Blood" },
+          { "DE": 144, "Test": "Body Fluid" },
+          { "DE": 145, "Test": "Swab" },
+          { "DE": 146, "Test": "Urine" },
+          { "DE": 147, "Test": "Others" }
+        ]
+      },
+      { "DE": 148, "Test": "Stool" },
+      { "DE": 149, "Test": "Water" },
+      { "DE": 150, "Test": "Pus" },
+      { "DE": 151, "Test": "Sputum" },
+      { "DE": 152, "Test": "CSF" },
+      { "DE": 153, "Test": "Sputum AFB" },
+      { "DE": 154, "Test": "Other AFB" },
+      { "DE": 155, "Test": "Leprosy Smear" },
+      { "DE": 156, "Test": "India Ink Test" },
+      { "DE": 157, "Test": "Anaerobic Culture" },
+      {
+        "DE": 158,
+        "Test": "Fungus",
+        "children": [
+          { "DE": 159, "Test": "KOH Test" },
+          { "DE": 160, "Test": "Culture" },
+          { "DE": 161, "Test": "Others" }
+        ]
+      }
+    ]
+  },
+  {
+    "DE": 162,
+    "Test": "Virology",
+    "children": [
+      {
+        "DE": 163,
+        "Test": "HIV RDT",
+        "children": [
+          { "DE": 164, "Test": "Total" },
+          { "DE": 165, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 166,
+        "Test": "HBsAg RDT",
+        "children": [
+          { "DE": 167, "Test": "Total" },
+          { "DE": 168, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 169,
+        "Test": "HCV RDT",
+        "children": [
+          { "DE": 170, "Test": "Total" },
+          { "DE": 171, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 172,
+        "Test": "HIV ELISA/CLIA",
+        "children": [
+          { "DE": 173, "Test": "Total" },
+          { "DE": 174, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 175,
+        "Test": "HAV ELISA/CLIA",
+        "children": [
+          { "DE": 176, "Test": "Total" },
+          { "DE": 177, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 178,
+        "Test": "HBsAg ELISA/CLIA",
+        "children": [
+          { "DE": 179, "Test": "Total" },
+          { "DE": 180, "Test": "+Ve" }
+        ]
+      },
+      {
+        "DE": 181,
+        "Test": "HCV ELISA/CLIA",
+        "children": [
+          { "DE": 182, "Test": "Total" },
+          { "DE": 183, "Test": "+Ve" }
+        ]
+      },
+      { "DE": 184, "Test": "Anti-HBs" },
+      { "DE": 185, "Test": "HBeAg" },
+      { "DE": 186, "Test": "Anti-HBe" },
+      { "DE": 187, "Test": "HBcAg" },
+      { "DE": 188, "Test": "Anti HBcAg" },
+      { "DE": 189, "Test": "Western Blot" },
+      { "DE": 190, "Test": "CD4 Count" },
+      { "DE": 191, "Test": "Viral Load" },
+      { "DE": 192, "Test": "Others" }
+    ]
+  },
+  {
+    "DE": 193,
+    "Test": "Parasitology",
+    "children": [
+      { "DE": 194, "Test": "Stool R/E" },
+      { "DE": 195, "Test": "Occult Blood" },
+      { "DE": 196, "Test": "Reducing Sugar" },
+      { "DE": 197, "Test": "Urine R/E" },
+      { "DE": 198, "Test": "Bile Salts" },
+      { "DE": 199, "Test": "Bile Pigments" },
+      { "DE": 200, "Test": "Urobilinogen" },
+      { "DE": 201, "Test": "Porphobilinogen" },
+      { "DE": 202, "Test": "Acetone" },
+      { "DE": 203, "Test": "Chyle" },
+      { "DE": 204, "Test": "Specific Gravity" },
+      { "DE": 205, "Test": "Bence Jones Protein" },
+      { "DE": 206, "Test": "Semen Analysis" },
+      { "DE": 207, "Test": "Others" }
+    ]
+  },
+  {
+    "DE": 208,
+    "Test": "Hormone/Endocrine",
+    "children": [
+      { "DE": 209, "Test": "T3" },
+      { "DE": 210, "Test": "T4" },
+      { "DE": 211, "Test": "TSH" },
+      { "DE": 212, "Test": "Cortisol" },
+      { "DE": 213, "Test": "AFP" },
+      { "DE": 214, "Test": "LH" },
+      { "DE": 215, "Test": "FSH" }
+    ]
+  }
+]

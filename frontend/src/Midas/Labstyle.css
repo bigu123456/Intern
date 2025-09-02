@@ -1,0 +1,71 @@
+/* Table border black */
+.lab-table .ant-table,
+.lab-table .ant-table-thead > tr > th,
+.lab-table .ant-table-tbody > tr > td {
+  border: 1px solid black !important;
+}
+
+/* Header orange */
+.lab-table .ant-table-thead > tr > th {
+  background-color: orange !important;
+  color: white !important;
+  text-align: center;
+}
+
+/* DE & Test columns yellow */
+.lab-table .de-col {
+  background-color: #fff89a !important; /* Light yellow */
+}
+
+.lab-table .test-col {
+  background-color: #fff89a !important; /* Light yellow */
+}
+
+/* No column white */
+.lab-table .ant-table-tbody td:nth-child(3n) {
+  background-color: white !important;
+}
+
+.category-row {
+  font-weight: bold;
+  background-color: #f0f0f0;
+}
+
+.subtest-row {
+  padding-left: 16px;
+  font-style: italic;
+  color: #333;
+}
+
+/* Container for tables: use flex */
+.lab-tables-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  align-items: stretch; /* stretch tables vertically */
+}
+
+/* Force table to fill parent height */
+.lab-table {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+.lab-table .ant-table {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.lab-table .ant-table-content {
+  flex: 1 1 auto; /* body stretches */
+  min-height: 0; /* prevent overflow */
+}
+
+.lab-table .ant-table-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}

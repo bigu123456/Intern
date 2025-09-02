@@ -1,0 +1,56 @@
+/* Apply border collapse for consistency */
+.ant-table {
+  border-collapse: collapse !important;
+}
+
+/* Header cells */
+.ant-table-thead > tr > th {
+  border: 1px solid black !important;
+  background: #f5f5f5; /* optional, for better look */
+  text-align: center;
+}
+
+/* Body cells */
+.ant-table-tbody > tr > td {
+  border: 1px solid black !important;
+}
+
+/* Footer cells */
+.ant-table-tfoot > tr > td {
+  border: 1px solid black !important;
+  font-weight: bold;
+  background: #fafafa; /* optional */
+  text-align: center;
+}
+
+/* Optional: Row hover */
+.ant-table-tbody > tr:hover > td {
+  background: #f9f9f9;
+}
+/* Checkbox box styling */
+.ant-checkbox-inner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid black !important;
+  border-radius: 4px;   /* change to 50% if you want circle */
+  background-color: white !important;
+}
+
+/* When checked */
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #1890ff !important; /* AntD blue (or pick your color) */
+  border-color: #1890ff !important;
+}
+
+/* Checkmark styling */
+.ant-checkbox-checked .ant-checkbox-inner::after {
+  border: 2px solid white;
+  border-top: 0;
+  border-left: 0;
+}
+
+/* Hover effect */
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner {
+  border-color: #1890ff !important;
+}

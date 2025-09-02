@@ -47,8 +47,7 @@ import Forms from "./components/Forms.jsx";
 import Todos from "./components/Todos.jsx";
 import Images from "./components/Images.jsx";
 
-import Inventory from "./Midas/Inventory.jsx";
-import Returnlist from "./Return/Retrunlist.jsx";
+
 import Log from "./components/Log.jsx";
 
 import Try from "./components/Try.jsx";
@@ -62,6 +61,10 @@ import Counter  from "./Midas/Counter.jsx";
 import LabTestTable from "./Midas/LabTestTable.jsx"
 import Hospital from "./Midas/Hospital.jsx";
 import Commons from "./Midas/Commons.jsx";
+import Lab from "./Midas/Lab.jsx";
+import LabTable from "./Midas/LabTable.jsx";
+
+import LabMain from "./Midas/LabMain.jsx";
 
 
 
@@ -119,8 +122,7 @@ const App = () => {
             <Route path="Page" element={<Page/>}/>
            
             
-            <Route path="Inventory" element={<Inventory/>}/>
-            <Route path="Returnlist"element={<Returnlist/>}/>
+        
            
          
             <Route path="Try" element={<Try/>}/>
@@ -133,6 +135,11 @@ const App = () => {
           <Route path="LabTestTable" element={<LabTestTable/>}/>
           <Route path="Hospital" element={<Hospital/>}/>
           <Route path="Commons" element={<Commons/>}/>
+          <Route path="Lab" element={<Lab/>}/>
+          <Route path="LabTable" element={<LabTable/>}/>
+
+          
+          <Route path="LabMain" element={<LabMain/>}/>
            
            
            

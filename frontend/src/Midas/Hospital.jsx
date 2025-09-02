@@ -60,14 +60,14 @@ const Hospital = () => {
       <div className="flex justify-center bg-gray-600 text-white px-5">
         <h1>Hospital Morbidity</h1>
       </div>
-      <div className="flex px-5">
+      <div className="flex ">
         <Table
           className="custom-table"
           columns={columns}
           dataSource={tableData}
           bordered
           pagination={false}
-          scroll={{ x: true }}
+         
         />
       </div>
     </>
