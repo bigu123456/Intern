@@ -16,7 +16,7 @@ export const ListInventory = () => {
     queryFn: () => fetcher('get-dropdown/supplier'),
   });
 };
-// patients-morbality
+
 
 export const Report = () => {
   const fromDate = '2002-01-01';
@@ -38,10 +38,7 @@ export const Hospitals = () => {
 
   return useQuery({
     queryKey: ['HospitalMorbidity', fromDate, toDate], 
-    queryFn: () => fetcher("/api/v1/reports/hospital-mortality", {
-      from: fromDate,
-      to: toDate
-    })
+    queryFn: () => fetcher("/api/v1/reports/hospital-mortality", {from: fromDate,to: toDate })
   });
 };
 
@@ -78,7 +75,7 @@ export const Dropdown = () => {
  
 
   return useQuery({
-    queryKey: ["HospitalMorbidity"],
+    queryKey: ["Lab"],
     queryFn: () =>
       fetcher("/api/v1/get-department-by-type?type=PATHO") 
     
